@@ -1,14 +1,14 @@
 const http =require("http");
 let count=0;
 
-const server = http.createServer((req,res) => {
-    log(count);
-    res.statusCode =200;
-    res.setHeader("Content-Type","text/plain");
-    res.write("hello\n");
+const server = http.createServer((req,res) => { //서버 객체 생성
+    log(count); //카운트 1 증가
+    res.statusCode =200;    //결과값 200
+    res.setHeader("Content-Type","text/plain");     //헤더 설정
+    res.write("hello\n");   //응답값 설정
 
     setTimeout(()=>{
-        res.end("Node.js");
+        res.end("Node.js"); //2초 후 Node.js 출력
     },2000);
 });
 
